@@ -1,0 +1,226 @@
+{
+  "design_system": {
+    "typography": {
+      "font_family": {
+        "headings": "Outfit, sans-serif",
+        "body": "DM Sans, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "font_weights": {
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "black": 900
+      },
+      "line_heights": {
+        "tight": 1.1,
+        "snug": 1.3,
+        "normal": 1.5,
+        "relaxed": 1.75
+      },
+      "letter_spacing": {
+        "tighter": "-0.05em",
+        "tight": "-0.025em",
+        "normal": "0",
+        "wide": "0.025em",
+        "wider": "0.05em"
+      }
+    },
+    "colors": {
+      "primary": {
+        "DEFAULT": "#4338ca",
+        "foreground": "#ffffff",
+        "50": "#eef2ff",
+        "100": "#e0e7ff",
+        "200": "#c7d2fe",
+        "300": "#a5b4fc",
+        "400": "#818cf8",
+        "500": "#6366f1",
+        "600": "#4f46e5",
+        "700": "#4338ca",
+        "800": "#3730a3",
+        "900": "#312e81"
+      },
+      "secondary": {
+        "DEFAULT": "#facc15",
+        "foreground": "#0f172a",
+        "50": "#fefce8",
+        "100": "#fef9c3",
+        "200": "#fef08a",
+        "300": "#fde047",
+        "400": "#facc15",
+        "500": "#eab308",
+        "600": "#ca8a04",
+        "700": "#a16207",
+        "800": "#854d0e",
+        "900": "#713f12"
+      },
+      "accent": {
+        "DEFAULT": "#10b981",
+        "foreground": "#ffffff",
+        "50": "#ecfdf5",
+        "100": "#d1fae5",
+        "200": "#a7f3d0",
+        "300": "#6ee7b7",
+        "400": "#34d399",
+        "500": "#10b981",
+        "600": "#059669",
+        "700": "#047857",
+        "800": "#065f46",
+        "900": "#064e3b"
+      },
+      "neutral": {
+        "50": "#f8fafc",
+        "100": "#f1f5f9",
+        "200": "#e2e8f0",
+        "300": "#cbd5e1",
+        "400": "#94a3b8",
+        "500": "#64748b",
+        "600": "#475569",
+        "700": "#334155",
+        "800": "#1e293b",
+        "900": "#0f172a",
+        "950": "#020617"
+      },
+      "background": "#ffffff",
+      "foreground": "#0f172a",
+      "card": "#ffffff",
+      "card_foreground": "#0f172a",
+      "popover": "#ffffff",
+      "popover_foreground": "#0f172a",
+      "muted": "#f1f5f9",
+      "muted_foreground": "#64748b",
+      "border": "#e2e8f0",
+      "input": "#e2e8f0",
+      "ring": "#4338ca"
+    },
+    "spacing": {
+      "container_padding": "p-4 md:p-8 lg:p-12",
+      "section_gap": "gap-8 md:gap-16 lg:gap-24",
+      "component_gap": "gap-4 md:gap-6"
+    },
+    "border_radius": {
+      "sm": "0.375rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem",
+      "2xl": "1.5rem",
+      "full": "9999px"
+    },
+    "shadows": {
+      "sm": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+      "md": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+      "lg": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+      "xl": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+      "inner": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 py-3 font-medium transition-all duration-300 shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5",
+      "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full px-6 py-3 font-medium transition-all duration-300 shadow-md hover:shadow-secondary/25 hover:-translate-y-0.5",
+      "outline": "border-2 border-primary text-primary hover:bg-primary/5 rounded-full px-6 py-3 font-medium transition-all duration-300",
+      "ghost": "hover:bg-accent/10 text-foreground hover:text-accent rounded-full px-4 py-2 font-medium transition-colors duration-200"
+    },
+    "cards": {
+      "base": "bg-card text-card-foreground rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow duration-300 p-6",
+      "interactive": "cursor-pointer hover:border-primary/50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+    },
+    "inputs": {
+      "base": "flex h-12 w-full rounded-lg border border-input bg-background px-4 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200"
+    },
+    "navigation": {
+      "header": "sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60",
+      "link": "text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+    }
+  },
+  "layout_strategies": {
+    "marketing": {
+      "grid": "grid grid-cols-1 md:grid-cols-12 gap-8",
+      "hero": "min-h-[80vh] flex items-center justify-center relative overflow-hidden",
+      "section": "py-24 md:py-32 relative"
+    },
+    "dashboard": {
+      "layout": "flex h-screen overflow-hidden bg-muted/30",
+      "sidebar": "w-64 border-r border-border bg-card hidden md:flex flex-col",
+      "main": "flex-1 overflow-y-auto p-8",
+      "grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+    }
+  },
+  "motion": {
+    "transitions": {
+      "default": "transition-all duration-300 ease-in-out",
+      "fast": "transition-all duration-150 ease-out",
+      "slow": "transition-all duration-500 ease-in-out"
+    },
+    "animations": {
+      "fade_in": "animate-in fade-in duration-500",
+      "slide_up": "animate-in slide-in-from-bottom-4 duration-500",
+      "scale_in": "animate-in zoom-in-95 duration-300"
+    }
+  },
+  "image_urls": {
+    "hero": {
+      "url": "https://images.pexels.com/photos/32476662/pexels-photo-32476662.jpeg",
+      "alt": "Modern school building with glass facade and green campus",
+      "category": "hero"
+    },
+    "students_learning": {
+      "url": "https://images.unsplash.com/photo-1427504746383-796b2a796dcd",
+      "alt": "Diverse group of students studying in library",
+      "category": "students"
+    },
+    "classroom": {
+      "url": "https://images.unsplash.com/photo-1509062522246-3755977927d7",
+      "alt": "Bright modern classroom with students",
+      "category": "facilities"
+    },
+    "science_lab": {
+      "url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d",
+      "alt": "Students conducting experiments in science lab",
+      "category": "facilities"
+    },
+    "sports": {
+      "url": "https://images.unsplash.com/photo-1526676037777-05a232554f77",
+      "alt": "Students playing sports on field",
+      "category": "facilities"
+    },
+    "teacher": {
+      "url": "https://images.unsplash.com/photo-1544717305-2782549b5136",
+      "alt": "Friendly teacher smiling",
+      "category": "faculty"
+    },
+    "library": {
+      "url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da",
+      "alt": "Modern school library interior",
+      "category": "facilities"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use 'Outfit' font for all headings and 'DM Sans' for body text. Import them from Google Fonts in index.css.",
+    "Implement a 'Light Mode' first approach with vibrant primary colors (Indigo/Violet) and sunny accents (Yellow).",
+    "For the Marketing pages, use large typography, generous whitespace (p-12+), and bento-grid layouts for galleries.",
+    "For the Dashboard, use a clean sidebar layout with 'cardless' or minimal card designs for widgets. Avoid heavy shadows.",
+    "Use the provided image URLs for specific sections. Do not use placeholders.",
+    "Ensure all interactive elements have hover states (scale up, color shift) and focus rings for accessibility.",
+    "Use 'framer-motion' for page transitions and scroll animations (fade-in, slide-up).",
+    "Strictly follow the 'Anti-AI Designer' persona: Avoid generic templates, use asymmetry, and prioritize emotional connection.",
+    "Use Shadcn UI components for complex interactions (Dialog, Dropdown, Form) but customize their styling to match the vibrant theme.",
+    "Ensure the codebase uses .js/.jsx extensions as requested, not .ts/.tsx.",
+    "Add 'data-testid' attributes to all interactive elements for testing."
+  ],
+  "universal_guidelines": [
+    "Avoid 'AI slop' aesthetic: generic centered layouts, simplistic gradients, uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) for overlays and sticky headers.",
+    "Do NOT apply universal transitions (e.g., 'transition: all'). Animate specific properties.",
+    "Do NOT center align the app container globally.",
+    "Use modern button styles (pill-shaped, sharp) with interaction animations.",
+    "Never use AI assistant emojis for icons. Use Lucide React icons.",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Subtle grain textures and noise overlays are encouraged for marketing pages."
+  ]
+}
