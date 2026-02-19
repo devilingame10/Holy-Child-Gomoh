@@ -1,19 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const token = localStorage.getItem('token');
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Facilities', path: '/facilities' },
-    { name: 'Faculty', path: '/faculty' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Academics', path: '/academics' },
     { name: 'Admissions', path: '/admissions' },
+    { name: 'Facilities', path: '/facilities' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'News & Events', path: '/news' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -23,26 +34,27 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm' : 'bg-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center gap-2 group" data-testid="logo-link">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-              <GraduationCap className="w-7 h-7 text-white" />
+          <Link to="/" className="flex items-center gap-3" data-testid="logo-link">
+            <div className="text-2xl font-heading font-bold text-primary">
+              Holy Child School
             </div>
-            <span className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              CampusLink
-            </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                data-testid={`nav-${link.name.toLowerCase()}`}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.path ? 'text-primary' : 'text-muted-foreground'
+                data-testid={`nav-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
+                className={`text-sm font-medium transition-colors ${
+                  location.pathname === link.path 
+                    ? 'text-primary' 
+                    : scrolled ? 'text-slate-600 hover:text-primary' : 'text-white hover:text-secondary'
                 }`}
               >
                 {link.name}
@@ -52,7 +64,7 @@ const Navbar = () => {
               <>
                 <Link to="/dashboard" data-testid="nav-dashboard">
                   <Button variant="ghost" className="rounded-full">
-                    Dashboard
+                    Portal
                   </Button>
                 </Link>
                 <Button onClick={handleLogout} variant="outline" className="rounded-full" data-testid="logout-button">
@@ -61,15 +73,17 @@ const Navbar = () => {
               </>
             ) : (
               <Link to="/login" data-testid="nav-login">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 py-3 font-medium transition-all duration-300 shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5">
-                  Parent Login
+                <Button className="h-10 px-6 rounded-full bg-primary text-white font-medium hover:bg-primary/90 transition-all shadow-md">
+                  Parent Portal
                 </Button>
               </Link>
             )}
           </div>
 
           <button
-            className="md:hidden p-2"
+            className={`lg:hidden p-2 ${
+              scrolled ? 'text-slate-900' : 'text-white'
+            }`}
             onClick={() => setIsOpen(!isOpen)}
             data-testid="mobile-menu-button"
           >
@@ -79,7 +93,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-lg" data-testid="mobile-menu">
+        <div className="lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-lg" data-testid="mobile-menu">
           <div className="px-4 py-6 space-y-4">
             {navLinks.map((link) => (
               <Link
@@ -87,7 +101,7 @@ const Navbar = () => {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={`block py-2 text-base font-medium transition-colors ${
-                  location.pathname === link.path ? 'text-primary' : 'text-muted-foreground'
+                  location.pathname === link.path ? 'text-primary' : 'text-slate-600'
                 }`}
               >
                 {link.name}
@@ -97,7 +111,7 @@ const Navbar = () => {
               <>
                 <Link to="/dashboard" onClick={() => setIsOpen(false)} className="block">
                   <Button variant="ghost" className="w-full rounded-full">
-                    Dashboard
+                    Portal
                   </Button>
                 </Link>
                 <Button onClick={handleLogout} variant="outline" className="w-full rounded-full">
@@ -106,8 +120,8 @@ const Navbar = () => {
               </>
             ) : (
               <Link to="/login" onClick={() => setIsOpen(false)} className="block">
-                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
-                  Parent Login
+                <Button className="w-full bg-primary text-white hover:bg-primary/90 rounded-full">
+                  Parent Portal
                 </Button>
               </Link>
             )}
