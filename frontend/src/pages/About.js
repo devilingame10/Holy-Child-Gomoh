@@ -1,64 +1,63 @@
 import { motion } from 'framer-motion';
-import { Target, Heart, Lightbulb, Award } from 'lucide-react';
+import { Target, Heart, Lightbulb, Shield, Quote } from 'lucide-react';
 
 const About = () => {
   const values = [
     {
       icon: Target,
       title: 'Excellence',
-      description: 'Striving for the highest standards in everything we do',
+      description: 'Commitment to highest standards in academics and character development',
     },
     {
       icon: Heart,
-      title: 'Integrity',
-      description: 'Building character through honesty and ethical behavior',
+      title: 'Compassion',
+      description: 'Nurturing empathy, kindness, and respect for all',
     },
     {
       icon: Lightbulb,
       title: 'Innovation',
-      description: 'Embracing creativity and forward-thinking approaches',
+      description: 'Encouraging creative thinking and problem-solving skills',
     },
     {
-      icon: Award,
-      title: 'Achievement',
-      description: 'Celebrating success and continuous improvement',
+      icon: Shield,
+      title: 'Integrity',
+      description: 'Building strong moral character and ethical values',
     },
   ];
 
   return (
     <div>
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-accent/10" data-testid="about-hero">
+      <section className="pt-32 pb-20 bg-gradient-to-tr from-primary/5 via-secondary/5 to-transparent" data-testid="about-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
-          >
+            className="text-center">
+            <div className="text-sm font-medium tracking-wider uppercase text-primary mb-4">About Us</div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-6">
-              About <span className="text-primary">CampusLink</span>
+              Holy Child School Gomoh
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A legacy of excellence in education, nurturing minds and building futures since 1995
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              A legacy of educational excellence, values, and holistic development since 1995
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="py-24" data-testid="about-story">
+      {/* History */}
+      <section className="py-32 bg-white" data-testid="history-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+              viewport={{ once: true }}>
               <img
-                src="https://images.unsplash.com/photo-1427504746383-796b2a796dcd"
-                alt="Students learning"
+                src="https://images.pexels.com/photos/3627486/pexels-photo-3627486.jpeg"
+                alt="School campus"
                 className="rounded-2xl shadow-xl"
               />
             </motion.div>
@@ -66,19 +65,19 @@ const About = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-heading font-bold text-foreground mb-6">
-                Our Story
+              viewport={{ once: true }}>
+              <div className="text-sm font-medium tracking-wider uppercase text-primary mb-4">Our Story</div>
+              <h2 className="text-4xl font-heading font-semibold tracking-tight text-foreground mb-6">
+                Building Excellence for Over 25 Years
               </h2>
-              <p className="text-lg text-muted-foreground mb-4">
-                Founded in 1995, CampusLink has been at the forefront of educational excellence for nearly three decades. What began as a small institution with a vision has grown into a premier educational establishment serving thousands of students.
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+                Established in 1995, Holy Child School Gomoh was founded with a vision to provide quality English medium education in the heart of Gomoh. What started as a modest institution has grown into one of the most trusted educational establishments in the region.
               </p>
-              <p className="text-lg text-muted-foreground mb-4">
-                Our journey has been marked by continuous innovation, unwavering commitment to quality education, and a deep understanding of evolving educational needs. We've consistently adapted our methodologies to prepare students for the challenges of tomorrow.
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+                Over the past two and a half decades, we have consistently maintained our commitment to academic excellence while fostering values of discipline, compassion, and social responsibility in our students.
               </p>
-              <p className="text-lg text-muted-foreground">
-                Today, we stand proud as a community that celebrates diversity, encourages critical thinking, and fosters an environment where every student can discover and nurture their unique talents.
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Today, we proudly serve over 800 students from Pre-Primary to Grade 12, supported by a dedicated team of 40+ qualified teachers and state-of-the-art facilities.
               </p>
             </motion.div>
           </div>
@@ -86,7 +85,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-muted" data-testid="mission-vision">
+      <section className="py-32 bg-slate-50" data-testid="mission-vision">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
@@ -94,11 +93,10 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary to-primary/80 rounded-3xl p-10 text-white"
-            >
+              className="bg-gradient-to-br from-primary to-primary/90 rounded-3xl p-12 text-white">
               <h3 className="text-3xl font-heading font-bold mb-6">Our Mission</h3>
               <p className="text-lg text-white/90 leading-relaxed">
-                To provide a transformative educational experience that empowers students with knowledge, skills, and values to excel in an ever-changing world. We are committed to fostering intellectual curiosity, critical thinking, and a lifelong love for learning.
+                To provide a caring, disciplined, and stimulating learning environment that empowers students with knowledge, skills, and values necessary for lifelong success. We strive to develop well-rounded individuals who are academically excellent, morally upright, and socially responsible.
               </p>
             </motion.div>
             <motion.div
@@ -106,26 +104,62 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-accent to-accent/80 rounded-3xl p-10 text-white"
-            >
+              className="bg-gradient-to-br from-secondary to-secondary/90 rounded-3xl p-12 text-white">
               <h3 className="text-3xl font-heading font-bold mb-6">Our Vision</h3>
               <p className="text-lg text-white/90 leading-relaxed">
-                To be recognized as a leading educational institution that nurtures innovative thinkers, compassionate leaders, and responsible global citizens. We envision a community where every student realizes their full potential and contributes meaningfully to society.
+                To be recognized as the premier educational institution in the region, known for academic excellence, character development, and holistic education. We envision a community of confident, compassionate learners who contribute positively to society and excel in their chosen fields.
               </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-24" data-testid="core-values">
+      {/* Principal's Message */}
+      <section className="py-32 bg-white" data-testid="principal-message">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-tr from-primary/5 via-secondary/5 to-transparent rounded-3xl p-12 relative">
+            <Quote className="w-16 h-16 text-secondary/20 absolute top-8 left-8" />
+            <div className="relative z-10">
+              <div className="text-sm font-medium tracking-wider uppercase text-primary mb-4">Principal's Message</div>
+              <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
+                Welcome to Holy Child School Gomoh
+              </h2>
+              <div className="font-accent text-xl text-slate-600 mb-6 leading-relaxed italic">
+                "Education is not just about imparting knowledge; it is about shaping character, nurturing potential, and inspiring young minds to dream and achieve."
+              </div>
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+                At Holy Child School, we believe every child is unique and possesses innate talents waiting to be discovered and developed. Our dedicated team of educators works tirelessly to create an environment where academic rigor meets compassionate care.
+              </p>
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                We prepare our students not just for examinations, but for life – equipping them with critical thinking skills, moral values, and the confidence to face challenges with courage and integrity.
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary"></div>
+                <div>
+                  <div className="font-heading font-bold text-foreground">Sr. Mary Joseph</div>
+                  <div className="text-sm text-slate-500">Principal</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section className="py-32 bg-slate-50" data-testid="core-values">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="text-sm font-medium tracking-wider uppercase text-primary mb-4">Our Foundation</div>
             <h2 className="text-4xl sm:text-5xl font-heading font-bold text-foreground mb-4">
-              Our Core Values
+              Core Values
             </h2>
-            <p className="text-lg text-muted-foreground">
-              The principles that guide everything we do
+            <p className="text-lg text-slate-600">
+              The principles that guide our educational philosophy
             </p>
           </div>
 
@@ -137,15 +171,14 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl mb-6">
-                  <value.icon className="w-10 h-10 text-white" />
+                className="bg-white rounded-2xl p-8 text-center border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl mb-6">
+                  <value.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-foreground mb-3">
                   {value.title}
                 </h3>
-                <p className="text-muted-foreground">{value.description}</p>
+                <p className="text-slate-600 leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
