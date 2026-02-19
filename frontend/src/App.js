@@ -5,9 +5,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
+import Academics from "@/pages/Academics";
 import Facilities from "@/pages/Facilities";
-import Faculty from "@/pages/Faculty";
 import Admissions from "@/pages/Admissions";
+import Gallery from "@/pages/Gallery";
+import News from "@/pages/News";
 import Contact from "@/pages/Contact";
 import Login from "@/pages/Login";
 import Dashboard from "@/pages/Dashboard";
@@ -18,7 +20,7 @@ function App() {
       <BrowserRouter>
         <Toaster position="top-center" richColors />
         <Routes>
-          {/* Auth Route - No Navbar/Footer */}
+          {/* Auth & Dashboard Routes - No Navbar/Footer */}
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           
@@ -29,9 +31,11 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/academics" element={<Academics />} />
                 <Route path="/facilities" element={<Facilities />} />
-                <Route path="/faculty" element={<Faculty />} />
                 <Route path="/admissions" element={<Admissions />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/news" element={<News />} />
                 <Route path="/contact" element={<Contact />} />
               </Routes>
               <Footer />
